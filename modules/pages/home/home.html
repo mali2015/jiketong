@@ -1,0 +1,168 @@
+<div class="index-main">
+    <div class="blue-top">
+        <h2>账户名称-恒大-A</h2>
+        <ul>
+            <li>
+                <span class="txt-hide city">成都成都成都</span>
+                <b class="txt-hide">恒大御大御大御龙天峰</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+            <li>
+                <span class="tex-hide city">重庆</span>
+                <b class="txt-hide">恒大广场</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+            <li>
+                <span class="tex-hide city">上海</span>
+                <b class="txt-hide">嘉定恒大名都</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+        </ul>
+        <ul class="hide-list">
+            <li>
+                <span class="txt-hide city">成都成都成都</span>
+                <b class="txt-hide">恒大御大御大御龙天峰</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+            <li>
+                <span class="tex-hide city">重庆</span>
+                <b class="txt-hide">恒大广场</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+            <li>
+                <span class="tex-hide city">上海</span>
+                <b class="txt-hide">嘉定恒大名都</b>
+                <time>2017.01.27-2017.02.28</time>
+            </li>
+        </ul>
+        <!-- hide-list end -->
+        <div class="show-btn down">
+            <span></span>
+        </div>
+        <!-- show-btn end -->
+        <div class="content yesterday">
+            <span>
+            	<b>3,200</b><i>昨日展现</i>
+			</span>
+            <span>
+            	<b>268</b><i>昨日点击</i>
+			</span>
+            <span>
+            	<b>29</b><i>昨日电话</i>
+			</span>
+        </div>
+        <!-- yesterday end -->
+    </div>
+    <!-- blue-top end -->
+    <!-- 图表 -->
+    <div class="content chart">
+        <div class="chart-head">
+            <div class="chart-left-select">
+                <span class="down">最近1天</span>
+                <ul>
+                    <li><a href="#">最近4天</a></li>
+                    <li><a href="#">最近1天</a></li>
+                    <li><a href="#">最近2天</a></li>
+                    <li><a href="#">最近3天</a></li>
+                </ul>
+            </div>
+            <div class="chart-right-select">
+                <a class="on" href="#">全部</a>
+                <a href="#">PC</a>
+                <a href="#">WAP</a>
+            </div>
+        </div>
+        <!-- chart-head end -->
+        <div id="container"></div>
+        <script type="text/javascript">
+        var chart;
+        $(document).ready(function() {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',
+                },
+                title: {
+                    text: false /*text: '这里放标题'*/
+                },
+                subtitle: {
+                    text: false /*text: '这里放副标题'*/
+                },
+                xAxis: {
+                    categories: ['11.15', '11.16', '11.17', '11.18', '11.19', '11.20', '11.21', '11.22']
+                },
+                yAxis: {
+                    title: {
+                        text: false /* 如果左侧有标题则把false换成 引号+内容 例如-'Y轴名称' */
+                    },
+                    labels: {
+                        formatter: function() {
+                            return this.value / 50000 + 'K'; /*如果左侧Y轴没有内容，则这个function里面为空*/
+                        }
+                    }
+                },
+                tooltip: {
+                    formatter: function() {
+                        return this.series.name + ' <b>' +
+                            Highcharts.numberFormat(this.y, 0, null, '') + '</b><br/>日期 ' + this.x;
+                    }
+                },
+                plotOptions: {
+                    area: {
+                        pointStart: 1940,
+                        marker: {
+                            enabled: false,
+                            symbol: 'circle',
+                            radius: 1,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: '总点击',
+                    data: [5000, 12000, 100000, 253000, 215000, 354000, 600000, 456400]
+                }, {
+                    name: '总曝光',
+                    data: [15000, 17000, 120000, 553000, 615000, 470000, 800000, 666400]
+                }]
+            });
+        });
+        </script>
+    </div>
+    <!-- chart end -->
+    <!-- 详细报表 -->
+    <div class="content statement">
+        <h6>详细报表</h6>
+        <dl>
+            <dt>
+                <a href="#">恒大广场 <i> &gt;</i></a>
+            </dt>
+            <dd>
+                <span>总曝光：2,341次</span>
+                <span>总点击：11,124次</span>
+                <span>总点击：11,124次</span>
+            </dd>
+            <dt>
+                <a href="#">恒大广场 <i> &gt;</i></a>
+            </dt>
+            <dd>
+                <span>总曝光：2,341次</span>
+                <span>总点击：11,124次</span>
+                <span>总点击：11,124次</span>
+            </dd>
+            <dt>
+                <a href="#">恒大广场 <i> &gt;</i></a>
+            </dt>
+            <dd>
+                <span>总曝光：2,341次</span>
+                <span>总点击：11,124次</span>
+                <span>总点击：11,124次</span>
+            </dd>
+        </dl>
+    </div>
+    <!-- statement end -->
+</div>
+<!-- index-main end -->

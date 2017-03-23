@@ -8,7 +8,7 @@ require('./widget-footer.js');
 require('./loading.js');
 
 angular
-    .module('RDash')
+    .module('jiketong')
     .directive('rdWidget', rdWidget);
 
 function rdWidget() {

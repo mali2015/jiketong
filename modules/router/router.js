@@ -1,18 +1,18 @@
 'use strict';
 
-var dashboard = require('pages/dashboard/dashboard');
-var tables = require('pages/tables/tables');
+var index = require('pages/index/index');
+var home = require('pages/home/home');
 
 /**
- * Route configuration for the RDash module.
+ * Route configuration for the jiketong module.
  */
-angular.module('RDash').config(function ($stateProvider, $urlRouterProvider) {
+angular.module('jiketong').config(function ($stateProvider, $urlRouterProvider) {
 
     // For unmatched routes
     $urlRouterProvider.otherwise('/');
 
     // Application routes
     $stateProvider
-        .state('index', dashboard)
-        .state('tables', tables);
+        .state('index', index)
+        .state('index.home', home);
 });

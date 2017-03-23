@@ -1,11 +1,11 @@
-angular.module('RDash', ['ui.bootstrap', 'ui.router', 'ngCookies']);
+angular.module('jiketong', ['ui.router', 'ngCookies']);
 require('router');
 
 /**
  * Master Controller
  */
 
-angular.module('RDash').controller('MasterCtrl', function ($scope, $cookieStore) {
+angular.module('jiketong').controller('MasterCtrl', function ($scope, $cookieStore) {
     /**
      * Sidebar Toggle & Cookie Control
      */

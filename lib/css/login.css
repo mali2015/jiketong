@@ -1,0 +1,10 @@
+header{ height: 5.76rem;  top: 0; z-index: 1; background: url(../images/loginheader-bg.jpg); background-size: cover; }
+section {top: 5.76rem; bottom: 0.98rem; overflow: auto; }
+.login-logo{ width: 100%; height: 100%; position: relative; }
+.login-logo img{ display: block; width: 2.49rem; height: 1.18rem; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+.login-form{ margin: 0 0.65rem; }
+.login-form *{ display: block; }
+.login-form form{ padding-top: 0.9rem; }
+.login-form input:not(.login-btn){ height: 0.98rem; text-indent: 0.2rem; width: 6.2rem; border: 1px solid #dedede; margin-bottom: 0.2rem; font-size: 0.32rem; color: #666;}
+.login-form .login-btn{ height: 1rem; margin: 0.3rem 0 0.4rem 0; font-size: 0.48rem; color: #fff; background: url(../images/btn-bg.png) repeat; border: none; width: 6.2rem; -webkit-border-radius: 0.5rem; border-radius: 0.5rem;  }
+.login-form a{ font-size: 0.32rem; color: #999; text-align: center; }

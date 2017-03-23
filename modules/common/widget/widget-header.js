@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('jiketong')
     .directive('rdWidgetHeader', rdWidgetTitle);
 
 function rdWidgetTitle() {

@@ -2,7 +2,7 @@
  * Alerts Controller
  */
 
-angular.module('RDash').controller('AlertsCtrl', function ($scope) {
+angular.module('jiketong').controller('AlertsCtrl', function ($scope) {
     $scope.alerts = [{
         type: 'success',
         msg: 'Thanks for visiting! Feel free to create pull requests to improve the dashboard!'

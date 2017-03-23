@@ -1,4 +1,4 @@
-.index-page section , .statement-page section , .account-page section , .tel-page section{ top: 0; bottom: 0.98rem; overflow: auto; }
+.home-page section , .statement-page section , .account-page section , .tel-page section{ top: 0; bottom: 0.98rem; overflow: auto; }
 
 /*首页*/
 .hide-list{ margin: 0 !important; padding: 0; display: none; }

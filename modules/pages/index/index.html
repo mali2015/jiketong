@@ -1,12 +1,12 @@
-<div class="page index-page">
+<div class="page {{state}}-page">
     <section ui-view>
         
     </section>
     <footer>
         <div class="foot">
             <ul class="clearfix">
-                <li class="on">
-                    <a href="index.html">
+                <li ng-class="{'on': state === 'home'}">
+                    <a ui-sref="index.home">
                         <img class="white-icon" src="lib/images/bottom-icon-1.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-1.png">
@@ -14,8 +14,8 @@
                         首页
                     </a>
                 </li>
-                <li>
-                    <a href="statement.html">
+                <li ng-class="{'on': state === 'statement'}">
+                    <a ui-sref="index.statement">
                         <img class="white-icon" src="lib/images/bottom-icon-2.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-2.png">
@@ -23,8 +23,8 @@
                         报表
                     </a>
                 </li>
-                <li>
-                    <a href="tel.html">
+                <li ng-class="{'on': state === 'tel'}">
+                    <a ui-sref="index.tel">
                         <img class="white-icon" src="lib/images/bottom-icon-3.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-3.png">
@@ -32,8 +32,8 @@
                         电话
                     </a>
                 </li>
-                <li>
-                    <a href="account.html">
+                <li ng-class="{'on': state === 'account'}">
+                    <a ui-sref="index.account">
                         <img class="white-icon" src="lib/images/bottom-icon-4.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-4.png">

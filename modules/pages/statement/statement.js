@@ -1,11 +1,11 @@
 module.exports = {
-    url: '/home',
-    template: __inline('./home.html'),
+    url: '/statement',
+    template: __inline('./statement.html'),
     controller: ["$scope", function($scope) {
-        var hideList = false;
+        var statementList = false;
         var chartList = false;
-        $scope.onShowBtnClick = function(event) {
-            hideList = showList($(".hide-list"), $(event.target), hideList);
+        $scope.onHeadClick = function(event) {
+            statementList = showList($(".statement .hide-list"), $(event.target), statementList);
         }
 
         $scope.onChartSelectClick = function(event) {

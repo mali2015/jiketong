@@ -1,39 +1,29 @@
-angular.module('jiketong', ['ui.router', 'ngCookies']);
+var api = 'http://www.data03.com/api/jkt/';
+var app = angular.module('jiketong', ['ui.router', 'ngCookies']);
 require('router');
 
 /**
  * Master Controller
  */
 
-angular.module('jiketong').controller('MasterCtrl', function ($scope, $cookieStore) {
-    /**
-     * Sidebar Toggle & Cookie Control
-     */
-    var mobileView = 992;
+app.controller('MasterCtrl', function($scope, $cookieStore) {
 
-    $scope.getWidth = function () {
-        return window.innerWidth;
-    };
-
-    $scope.$watch($scope.getWidth, function (newValue, oldValue) {
-        if (newValue >= mobileView) {
-            if (angular.isDefined($cookieStore.get('toggle'))) {
-                $scope.toggle = !$cookieStore.get('toggle') ? false : true;
-            } else {
-                $scope.toggle = true;
-            }
-        } else {
-            $scope.toggle = false;
-        }
-
-    });
-
-    $scope.toggleSidebar = function () {
-        $scope.toggle = !$scope.toggle;
-        $cookieStore.put('toggle', $scope.toggle);
-    };
-
-    window.onresize = function () {
-        $scope.$apply();
-    };
 });
+
+app.factory('$getData', function($http, $q, $userid) {
+    return function(method, params) {
+        var defer = $q.defer();
+        $http.get(api + method, {
+            params: angular.extend(params, {
+                id: $userid.id
+            })
+        }).success(function(data, status, headers, congfig) {
+            defer.resolve(data);
+        }).error(function(data, status, headers, congfig) {
+            defer.reject(data);
+        });
+        return defer.promise
+    }
+});
+
+app.value('$userid', {});

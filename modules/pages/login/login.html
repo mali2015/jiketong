@@ -1,0 +1,26 @@
+<div class="page">
+    <header class="login-header">
+        <div class="login-logo">
+            <img src="lib/images/logo.png" alt="" />
+        </div>
+        <!-- login-logo end -->
+    </header>
+    <section>
+        <div class="login-form">
+            <form>
+                <input type="text" name="" placeholder="输入您的账户名称或手机号码" required ng-model="phone"/>
+                <input type="password" name="" placeholder="输入您的密码" required ng-model="password" />
+                <input class="login-btn" type="submit" name="" value="登  录" ng-click="onLoginClick()" />
+                <a ui-sref="password">忘记您的密码？</a>
+            </form>
+        </div>
+        <!-- login-form end -->
+    </section>
+    <footer>
+        <p>
+            客服电话: 400-400-4000
+            <br/> ©2016 shuwujiketong.com 版权所有
+        </p>
+    </footer>
+</div>
+<!-- page end -->

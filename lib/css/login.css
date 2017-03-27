@@ -1,4 +1,4 @@
-header{ height: 5.76rem;  top: 0; z-index: 1; background: url(../images/loginheader-bg.jpg); background-size: cover; }
+.login-header{ height: 5.76rem;  top: 0; z-index: 1; background: url(../images/loginheader-bg.jpg); background-size: cover; }
 section {top: 5.76rem; bottom: 0.98rem; overflow: auto; }
 .login-logo{ width: 100%; height: 100%; position: relative; }
 .login-logo img{ display: block; width: 2.49rem; height: 1.18rem; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }

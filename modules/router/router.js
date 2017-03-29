@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('pages/index/index');
+var board = require('pages/board/board');
 var home = require('pages/home/home');
 var statement = require('pages/statement/statement');
 var tel = require('pages/tel/tel');
@@ -22,11 +22,11 @@ angular.module('jiketong').config(function ($stateProvider, $urlRouterProvider) 
 
     // Application routes
     $stateProvider
-        .state('index', index)
-        .state('index.home', home)
-        .state('index.statement', statement)
-        .state('index.tel', tel)
-        .state('index.account', account)
+        .state('board', board)
+        .state('board.home', home)
+        .state('board.statement', statement)
+        .state('board.tel', tel)
+        .state('board.account', account)
         .state('msg', msg)
         .state('login', login)
         .state('password', password)

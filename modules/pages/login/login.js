@@ -5,12 +5,14 @@ module.exports = {
         function($scope, $getData, $userid, $state) {
             $scope.onLoginClick = function() {
                 $getData('login', {
-                    name: $scope.phone,
+                    name: $scope.name,
                     pwd: $scope.password
                 }).then(function(res) {
                     if (res.status === 0) {
                         $userid.id = res.userinfos.id;
-                        $state.go('index.home');
+                        sessionStorage.setItem('userid', $userid.id);
+                        sessionStorage.setItem('username', $scope.name)
+                        $state.go('board.home');
                     } else {
                         alert(res.desc);
                     }

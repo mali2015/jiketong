@@ -1,6 +1,6 @@
 module.exports = {
-    url: '',
-    template: __inline('./index.html'),
+    url: '/board',
+    template: __inline('./board.html'),
     controller: ["$rootScope", "$scope", "$state",
         function($rootScope, $scope, $state) {
             $scope.state = $state.current.name.split('.')[1];

@@ -6,87 +6,28 @@
     <div class="tel-list">
         <div class="tel-list-head">
             <a class="on" href="#">全部渠道</a>
-            <a href="#">今日头条头条</a>
-            <a href="#">百度推广</a>
         </div>
         <div class="tel-list-count">
-            <span>客户列表 (50)</span>
+            <span>客户列表 ({{datacontext.list.length}})</span>
             <a href="#">来电先后排序</a>
         </div>
         <!-- tel-list-count end -->
         <ul>
-            <li>
+            <li ng-repeat="item in datacontext.list">
                 <p>
-                    <i class="down"></i>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
+                    <i class="down" ng-click="onExpandClick($event)"></i>
+                    <span class="txt-hide tel">{{item.phone}}</span>
+                    <span class="txt-hide city">{{item.city}}</span>
+                    <time class="txt-hide">{{item.status === 1 ? '已接通' : '未接通'}}</time>
+                    <a href="tel:{{item.phone}}"></a>
                 </p>
                 <div class="tel-details clearfix">
-                    <p>2017.10.02 23:10 百度推广移动端 主动来电</p>
-                    <p>2017.02.23 10:00 已接通 通话02:1</p>
+                    <p>{{item.call_time | datefilter}}  百度推广移动端  主动来电</p>
+                    <p>{{item.call_time | datefilter}} 已接通 通话{{item.talk_time | timefilter}}</p>
                     <span>
-									<b>购房意向:</b>
-									<i>北京 海淀区 学区房 两居 刚需</i>
-								</span>
-                    <a href="#">新增/修改 购房意向</a>
-                </div>
-                <!-- tel-details end -->
-            </li>
-            <li>
-                <p>
-                    <i class="down"></i>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </p>
-                <div class="tel-details clearfix">
-                    <p>2017.10.02 23:10 百度推广移动端 主动来电</p>
-                    <p>2017.02.23 10:00 已接通 通话02:1</p>
-                    <span>
-									<b>购房意向:</b>
-									<i>北京 海淀区 学区房 两居 刚需</i>
-								</span>
-                    <a href="#">新增/修改 购房意向</a>
-                </div>
-                <!-- tel-details end -->
-            </li>
-            <li>
-                <p>
-                    <i class="down"></i>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </p>
-                <div class="tel-details clearfix">
-                    <p>2017.10.02 23:10 百度推广移动端 主动来电</p>
-                    <p>2017.02.23 10:00 已接通 通话02:1</p>
-                    <span>
-									<b>购房意向:</b>
-									<i>北京 海淀区 学区房 两居 刚需</i>
-								</span>
-                    <a href="#">新增/修改 购房意向</a>
-                </div>
-                <!-- tel-details end -->
-            </li>
-            <li>
-                <p>
-                    <i class="down"></i>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </p>
-                <div class="tel-details clearfix">
-                    <p>2017.10.02 23:10 百度推广移动端 主动来电</p>
-                    <p>2017.02.23 10:00 已接通 通话02:1</p>
-                    <span>
-									<b>购房意向:</b>
-									<i>北京 海淀区 学区房 两居 刚需</i>
-								</span>
+                        <b>购房意向:</b>
+                        <i>{{item.intention}}</i>
+                    </span>
                     <a href="#">新增/修改 购房意向</a>
                 </div>
                 <!-- tel-details end -->

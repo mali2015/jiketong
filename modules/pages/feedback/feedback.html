@@ -2,16 +2,16 @@
     <header>
         <div class="public-head">
             <h2>
-					<a class="back-icon" href="javascript:history.back();"> &lt; </a>
-					意见反馈
-				</h2>
+                <a class="back-icon" href="javascript:history.back();"> &lt; </a>
+				意见反馈
+			</h2>
         </div>
         <!-- public-head end -->
     </header>
     <section>
-        <form action="" method="">
-            <textarea class="txt" placeholder="请输入您的意见或建议，管理员会尽快给您反馈。" required></textarea>
-            <input class="btn" type="submit" name="" value="提 交" />
+        <form>
+            <textarea class="txt" placeholder="请输入您的意见或建议，管理员会尽快给您反馈。" required ng-model="feedback"></textarea>
+            <input class="btn" type="submit" name="" value="提 交" ng-click="onSubmit()"/>
         </form>
     </section>
     <footer>

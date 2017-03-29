@@ -2,18 +2,18 @@
     <header>
         <div class="public-head">
             <h2>
-					<a class="back-icon" href="javascript:history.back();"> &lt; </a>
-					修改密码
-				</h2>
+                <a class="back-icon" href="javascript:history.back();"> &lt; </a>
+				修改密码
+			</h2>
         </div>
         <!-- public-head end -->
     </header>
     <section>
-        <form action="" method="">
-            <input class="ipt" type="password" name="" placeholder="输入现有密码" required />
-            <input class="ipt" type="password" name="" placeholder="设置新密码" required />
-            <input class="ipt" type="password" name="" placeholder="再次输入新密码" required />
-            <input class="btn" type="submit" name="" value="确认修改" />
+        <form>
+            <input class="ipt" type="password" name="" placeholder="输入现有密码" required ng-model="oldpwd" />
+            <input class="ipt" type="password" name="" placeholder="设置新密码" required ng-model="newpwd1" />
+            <input class="ipt" type="password" name="" placeholder="再次输入新密码" required ng-model="newpwd2" />
+            <input class="btn" type="submit" name="" value="确认修改" ng-click="onSubmit()" />
         </form>
     </section>
     <footer>

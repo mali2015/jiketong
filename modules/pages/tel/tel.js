@@ -1,9 +1,11 @@
 module.exports = {
-    url: '/tel',
+    url: '/tel/:id',
     template: __inline('./tel.html'),
-    controller: ['$scope', '$checkLog', 'datacontext', function($scope, $checkLog, datacontext) {
+    controller: ['$scope', '$checkLog', 'datacontext', 
+    function($scope, $checkLog, datacontext) {
     	$checkLog(datacontext);
         $scope.datacontext = datacontext;
+        $scope.username = sessionStorage.username;
 
         $scope.onExpandClick = function($event){
         	var $element = $($event.target);
@@ -21,11 +23,12 @@ module.exports = {
         }
     }],
     resolve: {
-        datacontext: function($getData) {
+        datacontext: function($getData, $stateParams) {
             return $getData('call_list', {
                 page_size: 20,
                 page_num: 1,
-                sort_type: 'ORDER_BY_CALL_TIME'
+                sort_type: 'ORDER_BY_CALL_TIME',
+                plan_id: $stateParams.id
             });
         }
     }

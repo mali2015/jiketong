@@ -1,42 +1,26 @@
 <div class="statement">
     <div class="blue-top">
-        <h2 class="statement-title" ng-click="onHeadClick($event)">账户名称-恒大-A <span class="down"></span></h2>
+        <h2 class="statement-title" ng-click="onHeadClick($event)">{{info.city}}-{{info.plan_name}} <span class="down"></span></h2>
         <ul class="hide-list">
-            <li>
-                <span class="txt-hide city">成都成都成都</span>
-                <b class="txt-hide">恒大御大御大御龙天峰</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">重庆</span>
-                <b class="txt-hide">恒大广场</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">上海</span>
-                <b class="txt-hide">嘉定恒大名都</b>
-                <time>2017.01.27-2017.02.28</time>
+            <li ng-click="onChangePlan(item)" ng-repeat="item in datacontext.list">
+                <span class="txt-hide city">{{item.city}}</span>
+                <b class="txt-hide">{{item.plan_name}}</b>
+                <time>{{item.stat_date}}-{{item.end_date}}</time>
             </li>
         </ul>
         <!-- hide-list end -->
         <div class="statement-msg msg-a">
             <ul class="clearfix">
                 <li>
-                    <b>123,200</b> 总曝光
+                    <b>{{statistical.total_pv}}</b> 总曝光
                 </li>
                 <li>
-                    <b>9,268</b> 总点击
-                    <span>
-									点击率 
-									<i>80%</i>
-								</span>
+                    <b>{{statistical.total_click}}</b> 总点击
+                    <span>点击率<i>{{statistical.click_ratio.toFixed(2)}}%</i></span>
                 </li>
                 <li>
-                    <b>1,929</b> 总来电
-                    <span>
-									来电率
-									<i>32%</i>
-								</span>
+                    <b>{{statistical.total_call}}</b> 总来电
+                    <span>来电率<i>{{statistical.call_ratio.toFixed(2)}}%</i></span>
                 </li>
             </ul>
         </div>
@@ -46,16 +30,16 @@
     <!-- 图表 -->
     <div class="chart">
         <div class="chart-nav">
-            <a class="on" href="#">全部渠道</a>
-            <a href="#">今日头条</a>
+            <a class="on">全部渠道</a>
+            <!-- <a href="#">今日头条</a>
             <a href="#">百度推广</a>
             <a href="#">爱奇艺</a>
-            <a href="#">优酷土豆</a>
+            <a href="#">优酷土豆</a> -->
         </div>
         <!-- chart-nav end -->
         <div class="chart-head">
             <div class="chart-left-select" ng-click="onChartSelectClick($event)">
-                <span class="down">最近1天</span>
+                <span class="down">最近7天</span>
                 <ul>
                     <li><a href="#">最近4天</a></li>
                     <li><a href="#">最近1天</a></li>
@@ -64,9 +48,9 @@
                 </ul>
             </div>
             <div class="chart-right-select">
-                <a class="on" href="#">全部</a>
-                <a href="#">PC</a>
-                <a href="#">WAP</a>
+                <a ng-click="onChangeSource(0)" ng-class="{'on':chartSource === 0}">全部</a>
+                <a ng-click="onChangeSource(1)" ng-class="{'on':chartSource === 1}">PC</a>
+                <a ng-click="onChangeSource(2)" ng-class="{'on':chartSource === 2}">WAP</a>
             </div>
         </div>
         <!-- chart-head end -->
@@ -74,53 +58,31 @@
         <div class="statement-msg msg-b">
             <ul class="clearfix">
                 <li>
-                    <b>123,200</b> 昨日展现
+                    <b>{{statistical.total_pv}}</b> 昨日展现
                 </li>
                 <li>
-                    <b>9,268</b> 昨日点击
-                    <span>
-									点击率 
-									<i>80%</i>
-								</span>
+                    <b>{{statistical.total_click}}</b> 昨日点击
+                    <span>点击率<i>{{statistical.click_ratio.toFixed(2)}}%</i>
+					</span>
                 </li>
                 <li>
-                    <b>1,929</b> 昨日电话
-                    <span>
-									来电率
-									<i>32%</i>
-								</span>
+                    <b>{{statistical.total_call}}</b> 昨日电话
+                    <span>来电率<i>{{statistical.call_ratio.toFixed(2)}}%</i>
+					</span>
                 </li>
             </ul>
         </div>
         <!-- statement-msg end -->
         <div class="statement-tel-list">
             <ul>
-                <li>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <span class="txt-hide tel">13501234567</span>
-                    <span class="txt-hide city">北京北京北京</span>
-                    <time class="txt-hide">2017.01.20 23:2.20 23:2.20 23:20</time>
-                    <a href="#"></a>
+                <li ng-repeat="tel in tellist">
+                    <span class="txt-hide tel">{{tel.phone}}</span>
+                    <span class="txt-hide city">{{tel.city}}</span>
+                    <time class="txt-hide">{{tel.call_time}}</time>
+                    <a href="tel:{{tel.phone}}"></a>
                 </li>
                 <li class="more">
-                    <a href="tel.html">查看全部来电 <i> &gt;</i></a>
+                    <a ng-click="onViewCall()">查看全部来电 <i> &gt;</i></a>
                 </li>
             </ul>
         </div>

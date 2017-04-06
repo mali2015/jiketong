@@ -1,8 +1,14 @@
 module.exports = {
     url: '/msg',
     template: __inline('./msg.html'),
-    controller: ["$scope",
-        function($scope) {
+    controller: ['$scope', '$getData', '$checkLog', 'datacontext',
+        function($scope, $getData, $checkLog, datacontext) {
+            $checkLog(datacontext);
+            $scope.datacontext = datacontext;
+            for (var i = 0; i < $scope.datacontext.list.length; i++) {
+                $scope.datacontext.list[i].isChecked = false;
+            }
+
             var showState = false;
             $scope.onEditClick = function(event) {
                 if (!showState) {
@@ -18,17 +24,21 @@ module.exports = {
                 }
             }
 
-            $(".msg li .label").on("click", function() {
-                if (this.className.indexOf("select") != -1) {
-                    $(this).removeClass("select");
-                } else {
-                    $(this).addClass("select");
-                }
-            });
+            $scope.onCheck = function(item){
+                item.isChecked = !item.isChecked;
+            }
 
             $(".all-select").on("click", function() {
                 $(".msg li .label").addClass("select");
             });
         }
-    ]
+    ],
+    resolve: {
+        datacontext: function($getData) {
+            return $getData('msg_list', {
+                page_size: 20,
+                page_num: 1
+            });
+        }
+    }
 };

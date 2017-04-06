@@ -1,54 +1,34 @@
 <div class="index-main">
     <div class="blue-top">
-        <h2>账户名称-恒大-A</h2>
+        <h2>账户名称-{{username}}</h2>
         <ul>
-            <li>
-                <span class="txt-hide city">成都成都成都</span>
-                <b class="txt-hide">恒大御大御大御龙天峰</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">重庆</span>
-                <b class="txt-hide">恒大广场</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">上海</span>
-                <b class="txt-hide">嘉定恒大名都</b>
-                <time>2017.01.27-2017.02.28</time>
+            <li ng-repeat="item in datacontext.list" ng-if="$index < 3">
+                <span class="txt-hide city">{{item.city}}</span>
+                <b class="txt-hide">{{item.plan_name}}</b>
+                <time>{{item.stat_date}}-{{item.end_date}}</time>
             </li>
         </ul>
-        <ul class="hide-list">
-            <li>
-                <span class="txt-hide city">成都成都成都</span>
-                <b class="txt-hide">恒大御大御大御龙天峰</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">重庆</span>
-                <b class="txt-hide">恒大广场</b>
-                <time>2017.01.27-2017.02.28</time>
-            </li>
-            <li>
-                <span class="tex-hide city">上海</span>
-                <b class="txt-hide">嘉定恒大名都</b>
-                <time>2017.01.27-2017.02.28</time>
+        <ul class="hide-list" ng-if="datacontext.list.length > 3">
+            <li ng-repeat="item in datacontext.list" ng-if="$index >= 3">
+                <span class="txt-hide city">{{item.city}}</span>
+                <b class="txt-hide">{{item.plan_name}}</b>
+                <time>{{item.stat_date}}-{{item.end_date}}</time>
             </li>
         </ul>
         <!-- hide-list end -->
-        <div class="show-btn down" ng-click="onShowBtnClick($event)">
+        <div class="show-btn down" ng-click="onShowBtnClick($event)" ng-if="datacontext.list.length > 3">
             <span></span>
         </div>
         <!-- show-btn end -->
         <div class="content yesterday">
             <span>
-            	<b>3,200</b><i>昨日展现</i>
+            	<b>{{statistical.total_pv}}</b><i>昨日展现</i>
 			</span>
             <span>
-            	<b>268</b><i>昨日点击</i>
+            	<b>{{statistical.total_click}}</b><i>昨日点击</i>
 			</span>
             <span>
-            	<b>29</b><i>昨日电话</i>
+            	<b>{{statistical.total_call}}</b><i>昨日电话</i>
 			</span>
         </div>
         <!-- yesterday end -->
@@ -58,7 +38,7 @@
     <div class="content chart">
         <div class="chart-head">
             <div class="chart-left-select" ng-click="onChartSelectClick($event)">
-                <span class="down">最近1天</span>
+                <span class="down">最近7天</span>
                 <ul>
                     <li><a href="#">最近4天</a></li>
                     <li><a href="#">最近1天</a></li>
@@ -67,9 +47,9 @@
                 </ul>
             </div>
             <div class="chart-right-select">
-                <a class="on" href="#">全部</a>
-                <a href="#">PC</a>
-                <a href="#">WAP</a>
+                <a ng-click="onChangeSource(0)" ng-class="{'on':chartSource === 0}">全部</a>
+                <a ng-click="onChangeSource(1)" ng-class="{'on':chartSource === 1}">PC</a>
+                <a ng-click="onChangeSource(2)" ng-class="{'on':chartSource === 2}">WAP</a>
             </div>
         </div>
         <!-- chart-head end -->
@@ -80,29 +60,13 @@
     <div class="content statement">
         <h6>详细报表</h6>
         <dl>
-            <dt>
-                <a href="#">恒大广场 <i> &gt;</i></a>
+            <dt ng-repeat-start="detail in detailinfo">
+                <a ng-click="onDetailClick(detail)">{{detail.plan_name}} <i> &gt;</i></a>
             </dt>
-            <dd>
-                <span>总曝光：2,341次</span>
-                <span>总点击：11,124次</span>
-                <span>总点击：11,124次</span>
-            </dd>
-            <dt>
-                <a href="#">恒大广场 <i> &gt;</i></a>
-            </dt>
-            <dd>
-                <span>总曝光：2,341次</span>
-                <span>总点击：11,124次</span>
-                <span>总点击：11,124次</span>
-            </dd>
-            <dt>
-                <a href="#">恒大广场 <i> &gt;</i></a>
-            </dt>
-            <dd>
-                <span>总曝光：2,341次</span>
-                <span>总点击：11,124次</span>
-                <span>总点击：11,124次</span>
+            <dd ng-repeat-end>
+                <span>总曝光：{{detail.total_pv}}次</span>
+                <span>总点击：{{detail.total_click}}次</span>
+                <span>总点击：{{detail.total_call}}次</span>
             </dd>
         </dl>
     </div>

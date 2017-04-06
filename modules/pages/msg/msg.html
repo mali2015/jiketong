@@ -12,45 +12,15 @@
     <section>
         <div class="content msg">
             <ul>
-                <li>
-                    <div class="label"></div>
+                <li ng-repeat="item in datacontext.list">
+                    <div class="label" ng-class="{true:'select',false:''}[item.isChecked]" ng-click="onCheck(item)"></div>
                     <div class="msg-text">
                         <div class="msg-title">
-                            系统公告
-                            <time>17/01/01</time>
+                            {{item.title}}
+                            <i ng-if="item.status === 0"></i>
+                            <time>{{item.time}}</time>
                         </div>
-                        <a>系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="label"></div>
-                    <div class="msg-text">
-                        <div class="msg-title">
-                            系统公告
-                            <time>17/01/01</time>
-                        </div>
-                        <a>系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="label"></div>
-                    <div class="msg-text">
-                        <div class="msg-title">
-                            系统公告
-                            <time>17/01/01</time>
-                        </div>
-                        <a>系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="label"></div>
-                    <div class="msg-text">
-                        <div class="msg-title">
-                            系统公告
-                            <i></i>
-                            <time>17/01/01</time>
-                        </div>
-                        <a>系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告系统公告</a>
+                        <a>{{item.content}}</a>
                     </div>
                 </li>
             </ul>
@@ -66,7 +36,7 @@
         <div class="foot">
             <ul class="clearfix">
                 <li>
-                    <a ui-sref="index.home">
+                    <a ui-sref="board.home">
                         <img class="white-icon" src="lib/images/bottom-icon-1.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-1.png">
@@ -75,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="index.statement">
+                    <a ui-sref="board.statement">
                         <img class="white-icon" src="lib/images/bottom-icon-2.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-2.png">
@@ -84,7 +54,7 @@
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="index.tel">
+                    <a ui-sref="board.tel">
                         <img class="white-icon" src="lib/images/bottom-icon-3.png">
                         <!-- 白色图标 -->
                         <img class="blue-icon" src="lib/images/bottom-hover-icon-3.png">

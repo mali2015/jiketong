@@ -88,7 +88,10 @@ fis.media('prod')
     .match('**.css', {
         optimizer: fis.plugin('clean-css')
     })
-    .match("lib/mod.js", {
+    .match("lib/js/mod.js", {
+        packTo: "/pkg/vendor.js"
+    })
+    .match("lib/js/fontSize.js", {
         packTo: "/pkg/vendor.js"
     })
     //所有页面中引用到的bower js资源

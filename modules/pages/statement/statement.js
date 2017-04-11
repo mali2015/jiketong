@@ -163,8 +163,8 @@ module.exports = {
         }
     ],
     resolve: {
-        datacontext: function($getData, $stateParams) {
+        datacontext: ['$getData', function($getData, $stateParams) {
             return $getData('plan_list', {});
-        }
+        }]
     }
 };

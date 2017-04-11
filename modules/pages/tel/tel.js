@@ -23,13 +23,13 @@ module.exports = {
         }
     }],
     resolve: {
-        datacontext: function($getData, $stateParams) {
+        datacontext: ['$getData', '$stateParams', function($getData, $stateParams) {
             return $getData('call_list', {
                 page_size: 20,
                 page_num: 1,
                 sort_type: 'ORDER_BY_CALL_TIME',
                 plan_id: $stateParams.id
             });
-        }
+        }]
     }
 };

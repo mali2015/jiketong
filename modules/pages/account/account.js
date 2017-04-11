@@ -14,8 +14,8 @@ module.exports = {
         }
     ],
     resolve: {
-        datacontext: function($getData) {
+        datacontext: ['$getData', function($getData) {
             return $getData('plan_list', {});
-        }
+        }]
     }
 };

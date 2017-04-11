@@ -34,11 +34,11 @@ module.exports = {
         }
     ],
     resolve: {
-        datacontext: function($getData) {
+        datacontext: ['$getData', function($getData) {
             return $getData('msg_list', {
                 page_size: 20,
                 page_num: 1
             });
-        }
+        }]
     }
 };

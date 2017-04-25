@@ -5,10 +5,10 @@ module.exports = {
         function($scope, $state, datacontext, $checkLog) {
         	$checkLog(datacontext);
             $scope.datacontext = datacontext;
-            $scope.username = sessionStorage.username;
+            $scope.username = localStorage.username;
             $scope.onLogout = function() {
-                sessionStorage.username = '';
-                sessionStorage.userid = '';
+                localStorage.username = '';
+                localStorage.userid = '';
                 $state.go('login');
             }
         }

@@ -10,8 +10,8 @@ module.exports = {
                 }).then(function(res) {
                     if (res.status === 0) {
                         $userid.id = res.userinfos.id;
-                        sessionStorage.setItem('userid', $userid.id);
-                        sessionStorage.setItem('username', $scope.name)
+                        localStorage.setItem('userid', $userid.id);
+                        localStorage.setItem('username', $scope.name)
                         $state.go('board.home');
                     } else {
                         alert(res.desc);

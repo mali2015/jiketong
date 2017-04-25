@@ -17,7 +17,7 @@ app.factory('$getData', function($http, $q, $userid) {
         var defer = $q.defer();
         $http.get(api + method, {
             params: angular.extend(params, {
-                id: sessionStorage.getItem('userid')
+                id: localStorage.getItem('userid')
             })
         }).success(function(data, status, headers, congfig) {
             defer.resolve(data);
@@ -35,12 +35,16 @@ app.factory('$getData', function($http, $q, $userid) {
 });
 
 //定义过滤器
-app.filter('datefilter', function(){
-    return function(input){
-        return input.replace(/-/g, '.');
+app.filter('datefilter', function() {
+    return function(input) {
+        if (input) {
+            return input.substring(5, input.length - 3);
+        } else {
+            return input;
+        }
     }
-}).filter('timefilter', function(){
-    return function(input){
+}).filter('timefilter', function() {
+    return function(input) {
         var time = new Date(input * 1000);
         time.setHours(0);
         return time.toTimeString().split(' ')[0];

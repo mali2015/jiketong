@@ -1,140 +1,720 @@
-.home-page section , .statement-page section , .account-page section , .tel-page section{ top: 0; bottom: 0.98rem; overflow: auto; }
+.home-page section,
+.statement-page section,
+.account-page section,
+.tel-page section {
+    top: 0;
+    bottom: 0.98rem;
+    overflow: auto;
+}
+
 
 /*首页*/
-.hide-list{ margin: 0 !important; padding: 0; display: none; }
-.chart-head{ height:0.78rem; background-color: #F6F6F6; margin-top: 0.9rem; font-size: 0.26rem; }
-.chart-left-select{ float: left; }
-.chart-left-select span{ display: block; line-height: 0.78rem; padding-left: 0.2rem; font-size: 0.3rem; }
-.chart-left-select span:after{ content: ""; display: inline-block; width: 0.2rem; height: 0.2rem; border-left: 1px solid #333; border-bottom: 1px solid #333; vertical-align: middle; margin: -0.18rem 0 0 0.2rem; }
-.chart-left-select span.down:after{ -webkit-transform: rotate(-45deg); transform: rotate(-45deg); vertical-align: middle; margin: -0.18rem 0 0 0.2rem; }
-.chart-left-select span.up:after{ -webkit-transform: rotate(135deg); transform: rotate(135deg); vertical-align: middle; margin: 0.12rem 0 0 0.2rem;}
-.chart-left-select ul{ position: absolute; z-index: 1; background-color: #fff;padding: 0.1rem 0.3rem 0.1rem 0.2rem; border: 1px solid #ddd; display: none; }
-.chart-left-select ul li{ margin-bottom: 0.1rem; }
-.chart-right-select{ float: right;line-height: 0.78rem; }
-.chart-right-select a{ display: inline-block; margin-right: 0.15rem; }
-.chart-right-select a.on{ color: #0b96ff; }
-.statement h6{ line-height: 0.78rem; padding-left: 0.2rem; font-size: 0.3rem; font-weight: 100; background-color: #F6F6F6; margin-top: 0.3rem; }
-.statement dl{ padding: 0 0.2rem; font-size: 0.28rem; margin-bottom: 0.3rem; }
-.statement dt{ padding: 0.22rem 0; }
-.statement dt a{ color: #0b96ff;}
-.statement dt a i{ font-family: "SimSun"; font-weight: 900;}
-.statement dd:not(:last-of-type){ border-bottom: 1px solid #dcdcdc; }
-.statement dd span{ display: inline-block; width: 45%; margin-bottom: 0.2rem; }
+
+.hide-list {
+    margin: 0 !important;
+    padding: 0;
+    display: none;
+}
+
+.chart-head {
+    height: 0.78rem;
+    background-color: #F6F6F6;
+    margin-top: 0.9rem;
+    font-size: 0.26rem;
+}
+
+.chart-left-select {
+    float: left;
+}
+
+.chart-left-select span {
+    display: block;
+    line-height: 0.78rem;
+    padding-left: 0.2rem;
+    font-size: 0.3rem;
+}
+
+.chart-left-select span:after {
+    content: "";
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    vertical-align: middle;
+    margin: -0.18rem 0 0 0.2rem;
+}
+
+.chart-left-select span.down:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    margin: -0.18rem 0 0 0.2rem;
+}
+
+.chart-left-select span.up:after {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    vertical-align: middle;
+    margin: 0.12rem 0 0 0.2rem;
+}
+
+.chart-left-select ul {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    padding: 0.1rem 0.3rem 0.1rem 0.2rem;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+.chart-left-select ul li {
+    margin-bottom: 0.1rem;
+}
+
+.chart-right-select {
+    float: right;
+    line-height: 0.78rem;
+}
+
+.chart-right-select a {
+    display: inline-block;
+    margin-right: 0.15rem;
+}
+
+.chart-right-select a.on {
+    color: #0b96ff;
+}
+
+.statement h6 {
+    line-height: 0.78rem;
+    padding-left: 0.2rem;
+    font-size: 0.3rem;
+    font-weight: 100;
+    background-color: #F6F6F6;
+    margin-top: 0.3rem;
+}
+
+.statement dl {
+    padding: 0 0.2rem;
+    font-size: 0.28rem;
+    margin-bottom: 0.3rem;
+}
+
+.statement dt {
+    padding: 0.22rem 0;
+}
+
+.statement dt a {
+    color: #0b96ff;
+}
+
+.statement dt a i {
+    font-family: "SimSun";
+    font-weight: 900;
+}
+
+.statement dd:not(:last-of-type) {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.statement dd span {
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 0.2rem;
+}
 
 
 /*报表*/
-.statement .blue-top{ padding: 0.3rem; }
-.statement-title span{ display: inline-block; width: 0.2rem; height: 0.2rem; border-left: 1px solid #fff; border-bottom: 1px solid #fff; vertical-align: middle; margin: -0.18rem 0 0 0.2rem; }
-.statement-title span.down{ -webkit-transform: rotate(-45deg); transform: rotate(-45deg); vertical-align: middle; margin: -0.18rem 0 0 0.2rem;  }
-.statement-title span.up{ -webkit-transform: rotate(135deg); transform: rotate(135deg); vertical-align: middle; margin: 0.07rem 0 0 0.2rem;  }
-.statement-msg li{ float: left; width: 34%; padding-left: 4%; font-size: 0.24rem; color: #fff; height: 0.8rem; border-left: 1px solid #fff;}
-.statement-msg li:first-child{ width: 23%; border: none; padding-left: 0%; }
-.statement-msg li b{ font-size: 0.36rem; font-weight: 900; display: block; }
-.statement-msg li i{ font-size: 0.28rem !important; }
-.statement-msg li span{ position: absolute; width: 0.85rem; height: 0.75rem; padding: 0 0 0 0.1rem; border-radius: 0.05rem; background-color: #67BFFC; margin: -0.39rem 0 0 0.5rem; }
-.statement-msg li span:before{ content: ""; position: absolute; width:0; height: 0; border-width: 0.1rem; border-style: solid; border-color: transparent #67BFFC transparent transparent; left: -0.18rem; top: 50%; margin-top: -0.1rem; }
-.statement .chart-head{ margin-top: 0; background: #fff; }
-.chart-nav{ margin-top: 0.27rem; height: 0.68rem; padding: 0 0.3rem; border-bottom: 2px solid #0b96ff; }
-.chart-nav a{ float: left; width: 1.37rem; line-height: 0.68rem; text-align: center; font-size: 0.26rem; }
-.chart-nav a.on{ background-color: #0b96ff; color: #fff; }
-.msg-b{ padding: 0.2rem 0.3rem; background: #fff; }
-.msg-b li{ background: #fff; color: #6E6E6E !important; border-color: #E2E2E2; }
-.msg-b li b{ color: #0B96FF; }
-.msg-b li span{ background-color: #0B96FF; color: #fff; margin: -0.48rem 0 0 0.3rem;  }
-.msg-b li span:before{ border-color: transparent #0B96FF transparent transparent; }
-.statement-tel-list { background: #fff; padding: 0.5rem 0 0 0 ; margin-bottom: 0.4rem; }
-.statement-tel-list li{ padding: 0 0.3rem; line-height:0.88rem; border-bottom: 1px solid #DEDEDE; overflow: hidden;  }
-.statement-tel-list li:first-child{ border-top: 1px solid #DEDEDE; }
-.statement-tel-list li span{ float: left; }
-.statement-tel-list li span.tel{ width: 2rem; }
-.statement-tel-list li span.city{ width: 1.3rem; margin-right: 0.1rem; }
-.statement-tel-list li time{ float: left; width: 2.7rem; }
-.statement-tel-list li:not(:last-child) a{ float: right; width: 0.6rem; height: 0.6rem; margin-top: 0.14rem; background: url(../images/tel-icon.png); background-size: cover; }
-.statement-tel-list .more { text-align: center; background-color: #F6F6F6;}
-.statement-tel-list .more a{ color: #0B96FF; font-size: 0.3rem;  }
-.statement-tel-list .more i{ font-family: "SimSun"; font-weight: 800; }
+
+.statement .blue-top {
+    padding: 0.3rem;
+}
+
+.statement-title span {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    vertical-align: middle;
+    margin: -0.18rem 0 0 0.2rem;
+}
+
+.statement-title span.down {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    margin: -0.18rem 0 0 0.2rem;
+}
+
+.statement-title span.up {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    vertical-align: middle;
+    margin: 0.07rem 0 0 0.2rem;
+}
+
+.statement-msg li {
+    float: left;
+    width: 34%;
+    padding-left: 4%;
+    font-size: 0.24rem;
+    color: #fff;
+    height: 0.8rem;
+    border-left: 1px solid #fff;
+}
+
+.statement-msg li:first-child {
+    width: 23%;
+    border: none;
+    padding-left: 0%;
+}
+
+.statement-msg li b {
+    font-size: 0.36rem;
+    font-weight: 900;
+    display: block;
+}
+
+.statement-msg li i {
+    font-size: 0.28rem !important;
+}
+
+.statement-msg li span {
+    position: absolute;
+    width: 1rem;
+    height: 0.75rem;
+    padding: 0 0 0 0.1rem;
+    border-radius: 0.05rem;
+    background-color: #67BFFC;
+    margin: -0.39rem 0 0 0.4rem;
+}
+
+.statement-msg li span:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent #67BFFC transparent transparent;
+    left: -0.18rem;
+    top: 50%;
+    margin-top: -0.1rem;
+}
+
+.statement .chart-head {
+    margin-top: 0;
+    background: #fff;
+}
+
+.chart-nav {
+    margin-top: 0.27rem;
+    height: 0.68rem;
+    padding: 0 0.3rem;
+    border-bottom: 2px solid #0b96ff;
+}
+
+.chart-nav a {
+    float: left;
+    width: 1.37rem;
+    line-height: 0.68rem;
+    text-align: center;
+    font-size: 0.26rem;
+}
+
+.chart-nav a.on {
+    background-color: #0b96ff;
+    color: #fff;
+}
+
+.msg-b {
+    padding: 0.2rem 0.3rem;
+    background: #fff;
+}
+
+.msg-b li {
+    background: #fff;
+    color: #6E6E6E !important;
+    border-color: #E2E2E2;
+}
+
+.msg-b li b {
+    color: #0B96FF;
+}
+
+.msg-b li span {
+    background-color: #0B96FF;
+    color: #fff;
+    margin: -0.48rem 0 0 0.2rem;
+}
+
+.msg-b li span:before {
+    border-color: transparent #0B96FF transparent transparent;
+}
+
+.statement-tel-list {
+    background: #fff;
+    padding: 0.5rem 0 0 0;
+    margin-bottom: 0.4rem;
+}
+
+.statement-tel-list li {
+    padding: 0 0.3rem;
+    line-height: 0.88rem;
+    border-bottom: 1px solid #DEDEDE;
+    overflow: hidden;
+}
+
+.statement-tel-list li:first-child {
+    border-top: 1px solid #DEDEDE;
+}
+
+.statement-tel-list li span {
+    float: left;
+}
+
+.statement-tel-list li span.tel {
+    width: 2rem;
+}
+
+.statement-tel-list li span.city {
+    width: 1.3rem;
+    margin-right: 0.1rem;
+}
+
+.statement-tel-list li time {
+    float: left;
+    width: 2.7rem;
+}
+
+.statement-tel-list li:not(:last-child) a {
+    float: right;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.14rem;
+    background: url(../images/tel-icon.png);
+    background-size: cover;
+}
+
+.statement-tel-list .more {
+    text-align: center;
+    background-color: #F6F6F6;
+}
+
+.statement-tel-list .more a {
+    color: #0B96FF;
+    font-size: 0.3rem;
+}
+
+.statement-tel-list .more i {
+    font-family: "SimSun";
+    font-weight: 800;
+}
+
 
 /*账户*/
-.account-page .blue-top{ padding-bottom: 0.3rem; }
-.set-account{ margin-top: 0.4rem; }
-.set-account li{ margin: 0 0.2rem; border-bottom: 1px solid #dedede; line-height: 0.88rem; }
-.set-account li:last-child{border-bottom: none; }
-.set-account li a{ display: block; line-height: 0.88rem; padding: 0 0.2rem; font-size: 0.32rem; }
-.set-account li a i{ float: right; font-family: "SimSun"; font-weight: 900; }
-.set-account .back{ position: absolute; bottom: 0.5rem; line-height: 0.88rem; width: 6.88rem; text-align: center; font-size: 0.34rem; border: 1px solid #cfcfcf; color: #E81221; background-color: #fff; border-radius: 0.05rem; }
+
+.account-page .blue-top {
+    padding-bottom: 0.3rem;
+}
+
+.set-account {
+    margin-top: 0.4rem;
+}
+
+.set-account li {
+    margin: 0 0.2rem;
+    border-bottom: 1px solid #dedede;
+    line-height: 0.88rem;
+}
+
+.set-account li:last-child {
+    border-bottom: none;
+}
+
+.set-account li a {
+    display: block;
+    line-height: 0.88rem;
+    padding: 0 0.2rem;
+    font-size: 0.32rem;
+}
+
+.set-account li a i {
+    float: right;
+    font-family: "SimSun";
+    font-weight: 900;
+}
+
+.set-account .back {
+    position: absolute;
+    bottom: 0.5rem;
+    line-height: 0.88rem;
+    width: 6.88rem;
+    text-align: center;
+    font-size: 0.34rem;
+    border: 1px solid #cfcfcf;
+    color: #E81221;
+    background-color: #fff;
+    border-radius: 0.05rem;
+}
 
 
 /*电话*/
-.tel-page .blue-top{ padding-bottom: 0.3rem; }
-.tel-list ul{ background: #fff; }
-.tel-list-head{ margin-top: 0.27rem; height: 0.68rem; padding: 0 0.3rem; border-bottom: 2px solid #0b96ff; }
-.tel-list-head a{ float: left; padding: 0 0.2rem; line-height: 0.68rem; text-align: center; font-size: 0.26rem; }
-.tel-list-head a.on{ background-color: #0b96ff; color: #fff; }
-.tel-list-count{ line-height: 0.88rem; border-bottom: 1px solid #dedede; background-color: #fff; padding: 0 0.3rem; font-size: 0.3rem; }
-.tel-list-count a{ float: right; color: #0B96FF; font-size: 0.26rem; }
-.tel-list li{ min-height: 0.88rem; overflow: hidden; border-bottom: 1px solid #dedede; }
-.tel-list li p{ padding: 0 0.3rem; }
-.tel-list li p span{ float: left; line-height: 0.88rem; }
-.tel-list li p span.tel{ width: 1.9rem; }
-.tel-list li p span.city{ width: 1.3rem; margin-right: 0.1rem; }
-.tel-list li p time{ float: left; line-height: 0.88rem; width: 2.35rem;}
-.tel-list li p a{ float: right; width: 0.6rem; height: 0.6rem; margin-top: 0.14rem; background: url(../images/tel-icon.png); background-size: cover; }
-.tel-list li p i{ float: left; width: 0.3rem; height: 0.3rem; margin-top: 0.29rem; margin-right: 0.1rem;  }
-.tel-list li p i.down{ background: url(../images/down-icon.png); background-size: cover; }
-.tel-list li p i.up{ background: url(../images/up-icon.png); background-size: cover; }
-.tel-list li.show{ background: #F2F2F2; }
-.tel-details{ background: #F2F2F2;  display: none; }
-.tel-details p{ color: #666; margin-bottom: 0.15rem; }
-.tel-details span{ display: block; padding: 0 0.3rem 0.15rem 0.3rem; font-size: 0.3rem; }
-.tel-details span b{ font-weight: 900; font-style: italic; }
-.tel-details span i{ font-style: italic; }
-.tel-details a{ float: right; padding-bottom: 0.2rem; color: #0B96FF; text-decoration: underline; margin-right: 0.3rem; }
-.tel-pop-box{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.5); z-index: 2; display: none;}
-.tel-pop-box form{ width: 5.9rem; height: 2.4rem; padding: 0.35rem 0.5rem; margin: auto; background: #fff; position: absolute; top: 0; bottom: 0; left: 0; right: 0;  }
-.tel-pop-box form p{ color: #666; }
-.tel-pop-box form .close{ position: absolute;right: 0; top: 0; padding: 0.2rem; }
-.tel-pop-box form input[type="text"]{ height: 0.77rem; line-height: 0.77rem; text-indent: 0.2rem; width: 5.9rem; border: 1px solid #dedede; margin: 0.2rem 0; font-size: 0.32rem; color: #666; -webkit-border-radius: 0.07rem; border-radius: 0.07rem;
+
+.tel-page .blue-top {
+    padding-bottom: 0.3rem;
 }
-.tel-pop-box form .submit{ display: block; height: 0.77rem; width: 1.9rem; margin: 0 auto; font-size: 0.32rem; color: #fff; background: url(../images/btn-bg.png) repeat; border: none;  -webkit-border-radius: 0.07rem; border-radius: 0.07rem;  }
 
+.tel-list ul {
+    background: #fff;
+}
 
+.tel-list-head {
+    margin-top: 0.27rem;
+    height: 0.68rem;
+    padding: 0 0.3rem;
+    border-bottom: 2px solid #0b96ff;
+}
 
+.tel-list-head a {
+    float: left;
+    padding: 0 0.2rem;
+    line-height: 0.68rem;
+    text-align: center;
+    font-size: 0.26rem;
+}
 
-.btn{ display: block; height: 0.9rem; width: 6.9rem; margin: 0.3rem auto 0 auto; font-size: 0.4rem; color: #fff; background: url(../images/btn-bg.png) repeat; border: none;  -webkit-border-radius: 0.07rem; border-radius: 0.07rem; }
-.ipt{ display: block; height: 0.98rem; width: 6.9rem; text-indent: 0.2rem; border: 1px solid #dedede; border-radius: 0.05rem; margin: 0.3rem auto 0 auto; font-size: 0.32rem; color: #999; }
-.txt{ display: block; height: 3.38rem; width: 6.48rem; padding: 0.1rem 0.2rem; border: 1px solid #dedede; border-radius: 0.05rem; margin: 0.3rem auto 0 auto; font-size: 0.3rem; color: #999; outline: none; }
+.tel-list-head a.on {
+    background-color: #0b96ff;
+    color: #fff;
+}
+
+.tel-list-count {
+    line-height: 0.88rem;
+    border-bottom: 1px solid #dedede;
+    background-color: #fff;
+    padding: 0 0.3rem;
+    font-size: 0.3rem;
+}
+
+.tel-list-count a {
+    float: right;
+    color: #0B96FF;
+    font-size: 0.26rem;
+}
+
+.tel-list li {
+    min-height: 0.88rem;
+    overflow: hidden;
+    border-bottom: 1px solid #dedede;
+}
+
+.tel-list li p {
+    padding: 0 0.3rem;
+}
+
+.tel-list li p span {
+    float: left;
+    line-height: 0.88rem;
+    margin-right: 0.2rem;
+}
+
+.tel-list li p span.tel {
+    width: 1.9rem;
+}
+
+.tel-list li p span.city {
+    margin-right: 0.2rem;
+}
+
+.tel-list li p time {
+    float: left;
+    line-height: 0.88rem;
+    width: 2.35rem;
+}
+
+.tel-list li p a {
+    float: right;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.14rem;
+    background: url(../images/tel-icon.png);
+    background-size: cover;
+}
+
+.tel-list li p i {
+    float: left;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-top: 0.29rem;
+    margin-right: 0.1rem;
+}
+
+.tel-list li p i.down {
+    background: url(../images/down-icon.png);
+    background-size: cover;
+}
+
+.tel-list li p i.up {
+    background: url(../images/up-icon.png);
+    background-size: cover;
+}
+
+.tel-list li.show {
+    background: #F2F2F2;
+}
+
+.tel-details {
+    background: #F2F2F2;
+    display: none;
+}
+
+.tel-details p {
+    color: #666;
+    margin-bottom: 0.15rem;
+}
+
+.tel-details span {
+    display: block;
+    padding: 0 0.3rem 0.15rem 0.3rem;
+    font-size: 0.3rem;
+}
+
+.tel-details span b {
+    font-weight: 900;
+    font-style: italic;
+}
+
+.tel-details span i {
+    font-style: italic;
+}
+
+.tel-details a {
+    float: right;
+    padding-bottom: 0.2rem;
+    color: #0B96FF;
+    text-decoration: underline;
+    margin-right: 0.3rem;
+}
+
+.tel-pop-box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+}
+
+.tel-pop-box form {
+    width: 5.9rem;
+    height: 2.4rem;
+    padding: 0.35rem 0.5rem;
+    margin: auto;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.tel-pop-box form p {
+    color: #666;
+}
+
+.tel-pop-box form .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.2rem;
+}
+
+.tel-pop-box form input[type="text"] {
+    height: 0.77rem;
+    line-height: 0.77rem;
+    text-indent: 0.2rem;
+    width: 5.9rem;
+    border: 1px solid #dedede;
+    margin: 0.2rem 0;
+    font-size: 0.32rem;
+    color: #666;
+    -webkit-border-radius: 0.07rem;
+    border-radius: 0.07rem;
+}
+
+.tel-pop-box form .submit {
+    display: block;
+    height: 0.77rem;
+    width: 1.9rem;
+    margin: 0 auto;
+    font-size: 0.32rem;
+    color: #fff;
+    background: url(../images/btn-bg.png) repeat;
+    border: none;
+    -webkit-border-radius: 0.07rem;
+    border-radius: 0.07rem;
+}
+
+.btn {
+    display: block;
+    height: 0.9rem;
+    width: 6.9rem;
+    margin: 0.3rem auto 0 auto;
+    font-size: 0.4rem;
+    color: #fff;
+    background: url(../images/btn-bg.png) repeat;
+    border: none;
+    -webkit-border-radius: 0.07rem;
+    border-radius: 0.07rem;
+}
+
+.ipt {
+    display: block;
+    height: 0.98rem;
+    width: 6.9rem;
+    text-indent: 0.2rem;
+    border: 1px solid #dedede;
+    border-radius: 0.05rem;
+    margin: 0.3rem auto 0 auto;
+    font-size: 0.32rem;
+    color: #999;
+}
+
+.txt {
+    display: block;
+    height: 3.38rem;
+    width: 6.48rem;
+    padding: 0.1rem 0.2rem;
+    border: 1px solid #dedede;
+    border-radius: 0.05rem;
+    margin: 0.3rem auto 0 auto;
+    font-size: 0.3rem;
+    color: #999;
+    outline: none;
+}
+
 
 /*验证密码*/
-.verify{ padding: 0 0.3rem; }
-.verify p{ font-size: 0.32rem; color: #666; margin-top: 0.58rem; }
-.verify .anew{ float: right; margin: 0.3rem 0; font-size: 0.32rem; color: #0B96FF; }
-.count-down{ display: none; }
-.verify .on .count-down{ display: inline-block; }
+
+.verify {
+    padding: 0 0.3rem;
+}
+
+.verify p {
+    font-size: 0.32rem;
+    color: #666;
+    margin-top: 0.58rem;
+}
+
+.verify .anew {
+    float: right;
+    margin: 0.3rem 0;
+    font-size: 0.32rem;
+    color: #0B96FF;
+}
+
+.count-down {
+    display: none;
+}
+
+.verify .on .count-down {
+    display: inline-block;
+}
+
+
 /*消息中心*/
-.redact , .redact:active , .redact:hover{ float: right;  color: #fff; font-size: 0.32rem; }
-.msg { margin-top: 0.3rem; }
-.msg ul{ padding: 0 0.2rem; }
-.msg li{ overflow: hidden; border-bottom: 1px solid #dedede; padding: 0.2rem 0; }
-.msg li:last-child{ border: none; }
-.msg li .label{ display: none; float: left; height: 0.28rem; width: 0.28rem; border: 1px solid #dedede; border-radius: 50%; margin-top: 0.1rem; }
-.msg li .select{ background: url(../images/select-icon.png); background-size: 100% 100%; border-color: #fff; }
-.msg li .msg-text{ padding-left: 0.1rem; float: left; width: 6rem;}
 
-.msg-title{ font-size: 0.32rem;  }
-.msg-title i{ display: inline-block; width: 0.12rem; height: 0.12rem; border-radius: 100%; background: #E50112; vertical-align: middle; }
-.msg-title time{ float: right; font-size: 0.22rem; color: #999; }
-.msg-text a{ display: block; font-size: 0.22rem; color: #999; margin: 0.1rem 0; }
-.bottom-select{ background-color: #F6F6F6; padding: 0 0.2rem; display: none; }
-.bottom-select a{ color: #0B96FF; line-height: 0.7rem; font-size: 0.3rem; }
-.bottom-select a:last-child{ float: right; }
+.redact,
+.redact:active,
+.redact:hover {
+    float: right;
+    color: #fff;
+    font-size: 0.32rem;
+}
 
+.msg {
+    margin-top: 0.3rem;
+}
 
+.msg ul {
+    padding: 0 0.2rem;
+}
 
+.msg li {
+    overflow: hidden;
+    border-bottom: 1px solid #dedede;
+    padding: 0.2rem 0;
+}
 
+.msg li:last-child {
+    border: none;
+}
 
+.msg li .label {
+    display: none;
+    float: left;
+    height: 0.28rem;
+    width: 0.28rem;
+    border: 1px solid #dedede;
+    border-radius: 50%;
+    margin-top: 0.1rem;
+}
 
+.msg li .select {
+    background: url(../images/select-icon.png);
+    background-size: 100% 100%;
+    border-color: #fff;
+}
 
+.msg li .msg-text {
+    padding-left: 0.1rem;
+    float: left;
+    width: 6rem;
+}
 
+.msg-title {
+    font-size: 0.32rem;
+}
 
+.msg-title i {
+    display: inline-block;
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 100%;
+    background: #E50112;
+    vertical-align: middle;
+}
 
+.msg-title time {
+    float: right;
+    font-size: 0.22rem;
+    color: #999;
+}
 
+.msg-text a {
+    display: block;
+    font-size: 0.22rem;
+    color: #999;
+    margin: 0.1rem 0;
+}
+
+.bottom-select {
+    background-color: #F6F6F6;
+    padding: 0 0.2rem;
+    display: none;
+}
+
+.bottom-select a {
+    color: #0B96FF;
+    line-height: 0.7rem;
+    font-size: 0.3rem;
+}
+
+.bottom-select a:last-child {
+    float: right;
+}

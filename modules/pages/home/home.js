@@ -5,7 +5,7 @@ module.exports = {
         function($scope, $getData, $checkLog, datacontext, $state) {
             $checkLog(datacontext);
             $scope.datacontext = datacontext;
-            $scope.username = sessionStorage.username;
+            $scope.username = localStorage.username;
             $scope.chartSource = 0;
 
             $getData('plan_report_total', {
@@ -101,7 +101,7 @@ module.exports = {
                     },
                     labels: {
                         formatter: function() {
-                            return this.value / 50000 + 'K'; /*如果左侧Y轴没有内容，则这个function里面为空*/
+                            return this.value; /*如果左侧Y轴没有内容，则这个function里面为空*/
                         }
                     }
                 },

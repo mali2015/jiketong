@@ -1,61 +1,307 @@
-*{ margin: 0; padding: 0; text-decoration: none; list-style: none; }
-html, body, .page { height: 100%; width: 7.5rem; overflow: hidden; }
-body{ width: 7.5rem; margin: 0 auto; line-height: 1.5; font-size: 0.28rem; font-family:"Microsoft YaHei" , Arial; color: #333; }
-img{ border: none; }
-a ,a:active,a:hover{-webkit-tap-highlight-color:transparent; color: #333; }
-textarea{ resize: none; }
-i,b{ font-style: normal; font-weight: 100; }
-input{ outline: none; }
-header, footer, nav, aside, section, video, audio, canvas, mark, svg , time{ display: block; }
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
 
-.txt-hide{ overflow: hidden; text-overflow: ellipsis; -o-text-overflow: ellipsis; white-space: nowrap; }
-.clearfix:after{ content: ""; display: block; clear: both; }
+html,
+body,
+.page {
+    height: 100%;
+    width: 7.5rem;
+    overflow: hidden;
+}
 
-.page{ width: 7.5rem; position: absolute; top: 0; left: 0; background-color: #F2F2F2; }
-header, footer, section { position: absolute; left: 0; right: 0; }
-footer{ height: 0.98rem; bottom: 0; z-index: 1; }
-footer p{ margin: 0 0.65rem; border-top: 1px solid #dedede; text-align: center; font-size: 0.2rem; color: #999; padding-top: 0.08rem;}
-.content{ width: 6.9rem; margin: 0 auto; background-color: #fff; border-radius: 0.07rem; -moz-box-shadow: 0rem 0rem 5px #ddd; box-shadow: 0rem 0rem 5px #ddd; }
+body {
+    width: 7.5rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: 0.28rem;
+    font-family: "Microsoft YaHei", Arial;
+    color: #333;
+    overflow: auto;
+}
 
+img {
+    border: none;
+}
 
-.public-head{ line-height: 1.2rem; background-color: #222434; padding: 0 0.3rem; color: #fff; }
-.public-head h2{ font-size: 0.38rem; text-align: center; font-weight: 100; }
-.public-head h2 .back-icon{ float: left; line-height: 1.2rem; color: #fff; font-family: "SimSun"; font-weight: bold; }
+a,
+a:active,
+a:hover {
+    -webkit-tap-highlight-color: transparent;
+    color: #333;
+}
 
-.foot{ background-color: #222334; padding: 0 0.3rem; }
-.foot li{ float: left; height: 0.98rem; width: 25%; }
-.foot li a{ display: block;  height: 0.98rem; text-align: center; color: #fff; font-size: 0.2rem; }
-.foot li a img{ display: block; width: 0.5rem; height: 0.5rem; margin: 0.08rem auto -0.04rem auto;}
-.foot .blue-icon{ display: none; }
-.foot .on .white-icon{ display: none; }
-.foot .on a{ color: #0b96ff; }
-.foot .on .blue-icon{ display: block; }
+textarea {
+    resize: none;
+}
 
+i,
+b {
+    font-style: normal;
+    font-weight: 100;
+}
 
-.blue-top{ background: -webkit-linear-gradient(#0089F1,#41ADFF); linear-gradient(#0089F1,#41ADFF); color: #fff; padding: 0.3rem 0.3rem 0.9rem 0.3rem; }
-.blue-top h2{ font-size: 0.38rem; font-weight: normal; text-align: center; }
-.blue-top ul{ font-size: 0.3rem; margin-top: 0.4rem; }
-.blue-top ul li{ line-height: 0.4rem;}
-.blue-top ul .city{ width: 1.2rem; float: left; margin-right: 0.08rem; }
-.blue-top ul b{ display: inline-block; width: 2rem; }
-.blue-top ul time{ float: right; }
+input {
+    outline: none;
+}
 
-.show-btn span{ display: block; width: 0.3rem; height: 0.3rem; border-left: 2px solid #83CAFD; border-bottom: 2px solid #83CAFD; }
-.down span{ margin: 0.1rem auto 0.1rem auto; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
-.up span{ margin: 0.3rem auto 0.1rem auto; -webkit-transform: rotate(135deg); transform: rotate(135deg);}
+header,
+footer,
+nav,
+aside,
+section,
+video,
+audio,
+canvas,
+mark,
+svg,
+time {
+    display: block;
+}
 
-.yesterday{ height: 1.3rem; color: #666;  position: absolute; margin-top: 0.2rem; font-size: 0.24rem; }
-.yesterday span{ float: left; width: 33.33%; text-align: center; }
-.yesterday span *{ display: block; }
-.yesterday span:not(:first-child):after{ content: ""; display: block; width: 1px; height: 0.7rem; background: #ddd; position: absolute; margin-top: -0.77rem; }
-.yesterday span b{ font-size: 0.4rem; color: #0b96ff; margin-top: 0.13rem; }
+.txt-hide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-#container { min-width: 6.9rem; height: 300px; margin: 0 auto; border-radius: 0.08rem; overflow: hidden; padding-top: 0.2rem; background: #fff; }
-.highcharts-button , .highcharts-credits{ display: none; }
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
+.page {
+    width: 7.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #F2F2F2;
+}
 
+header,
+footer,
+section {
+    left: 0;
+    right: 0;
+    position: absolute;
+}
 
-.public-page-a section{ top: 1.2rem; bottom: 0.98rem; overflow: auto; }
+footer {
+    height: 0.98rem;
+    bottom: 0;
+    z-index: 1;
+}
 
+footer p {
+    margin: 0 0.65rem;
+    border-top: 1px solid #dedede;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #999;
+    padding-top: 0.08rem;
+}
 
+.content {
+    width: 6.9rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.07rem;
+    -moz-box-shadow: 0rem 0rem 5px #ddd;
+    box-shadow: 0rem 0rem 5px #ddd;
+}
 
+.public-head {
+    line-height: 1.2rem;
+    background-color: #222434;
+    padding: 0 0.3rem;
+    color: #fff;
+}
+
+.public-head h2 {
+    font-size: 0.38rem;
+    text-align: center;
+    font-weight: 100;
+}
+
+.public-head h2 .back-icon {
+    float: left;
+    line-height: 1.2rem;
+    color: #fff;
+    font-family: "SimSun";
+    font-weight: bold;
+}
+
+.foot {
+    background-color: #222334;
+    padding: 0 0.3rem;
+}
+
+.foot li {
+    float: left;
+    height: 0.98rem;
+    width: 25%;
+}
+
+.foot li a {
+    display: block;
+    height: 0.98rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.2rem;
+}
+
+.foot li a img {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0.08rem auto -0.04rem auto;
+}
+
+.foot .blue-icon {
+    display: none;
+}
+
+.foot .on .white-icon {
+    display: none;
+}
+
+.foot .on a {
+    color: #0b96ff;
+}
+
+.foot .on .blue-icon {
+    display: block;
+}
+
+.blue-top {
+    background: -webkit-linear-gradient(#0089F1, #41ADFF);
+    linear-gradient(#0089F1, #41ADFF);
+    color: #fff;
+    padding: 0.3rem 0.3rem 0.9rem 0.3rem;
+}
+
+.blue-top h2 {
+    font-size: 0.38rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.blue-top ul {
+    font-size: 0.3rem;
+    margin-top: 0.4rem;
+}
+
+.blue-top ul li {
+    line-height: 0.4rem;
+}
+
+.blue-top ul .city {
+    width: 1.2rem;
+    float: left;
+    margin-right: 0.08rem;
+}
+
+.blue-top ul b {
+    display: inline-block;
+    width: 2rem;
+}
+
+.blue-top ul time {
+    float: right;
+}
+
+.show-btn span {
+    display: block;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-left: 2px solid #83CAFD;
+    border-bottom: 2px solid #83CAFD;
+}
+
+.down span {
+    margin: 0.1rem auto 0.1rem auto;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.up span {
+    margin: 0.3rem auto 0.1rem auto;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.yesterday {
+    height: 1.3rem;
+    color: #666;
+    position: absolute;
+    margin-top: 0.2rem;
+    font-size: 0.24rem;
+}
+
+.yesterday span {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.yesterday span * {
+    display: block;
+}
+
+.yesterday span:not(:first-child):after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 0.7rem;
+    background: #ddd;
+    position: absolute;
+    margin-top: -0.77rem;
+}
+
+.yesterday span b {
+    font-size: 0.4rem;
+    color: #0b96ff;
+    margin-top: 0.13rem;
+}
+
+#container {
+    min-width: 6.9rem;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    padding-top: 0.2rem;
+    background: #fff;
+}
+
+.highcharts-button,
+.highcharts-credits {
+    display: none;
+}
+
+.public-page-a section {
+    top: 1.2rem;
+    bottom: 0.98rem;
+    overflow: auto;
+}
+
+.f-morelp {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    color: #12609e;
+    background: #f7f7f7;
+    text-align: center;
+    z-index: 100;
+}
+
+.f-more-title {
+    font-size: 0.3rem;
+    padding: 0 2%;
+    color: #be3f1c;
+}

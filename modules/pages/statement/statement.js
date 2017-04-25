@@ -127,7 +127,7 @@ module.exports = {
                     },
                     labels: {
                         formatter: function() {
-                            return this.value / 50000 + 'K'; /*如果左侧Y轴没有内容，则这个function里面为空*/
+                            return this.value; /*如果左侧Y轴没有内容，则这个function里面为空*/
                         }
                     }
                 },

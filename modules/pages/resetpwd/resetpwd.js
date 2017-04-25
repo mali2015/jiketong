@@ -6,7 +6,7 @@ module.exports = {
             $scope.onSubmit = function() {
                 if ($scope.newpwd1 === $scope.newpwd2) {
                     $getData('change_password', {
-                        name: sessionStorage.username,
+                        name: localStorage.username,
                         pwd: $scope.oldpwd,
                         newpwd: $scope.newpwd1
                     }).then(function(res) {

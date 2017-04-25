@@ -8,39 +8,43 @@
             <a class="on" href="#">全部渠道</a>
         </div>
         <div class="tel-list-count">
-            <span>客户列表 ({{datacontext.list.length}})</span>
-            <a href="#">来电先后排序</a>
+            <span>客户列表 ({{tel_list.length}})</span>
+            <a ng-click="onSortByTime()">来电先后排序</a>
         </div>
         <!-- tel-list-count end -->
         <ul>
-            <li ng-repeat="item in datacontext.list">
+            <li ng-repeat="item in tel_list">
                 <p>
-                    <i class="down" ng-click="onExpandClick($event)"></i>
+                    <!-- <i class="down" ng-click="onExpandClick($event)"></i> -->
                     <span class="txt-hide tel">{{item.phone}}</span>
                     <span class="txt-hide city">{{item.city}}</span>
-                    <time class="txt-hide">{{item.status === 1 ? '已接通' : '未接通'}}</time>
+                    <span class="txt-hide">{{item.call_time | datefilter}}</span>
+                    <span class="txt-hide">{{item.status === 1 ? '已接通' : '未接通'}}</span>
                     <a href="tel:{{item.phone}}"></a>
                 </p>
-                <div class="tel-details clearfix">
+                <!-- <div class="tel-details clearfix">
                     <p>{{item.call_time | datefilter}}  百度推广移动端  主动来电</p>
-                    <p>{{item.call_time | datefilter}} 已接通 通话{{item.talk_time | timefilter}}</p>
+                    <p>{{item.call_time | datefilter}} 已接通 通话 {{item.talk_time}}</p>
                     <span>
                         <b>购房意向:</b>
                         <i>{{item.intention}}</i>
                     </span>
                     <a href="#">新增/修改 购房意向</a>
-                </div>
+                </div> -->
                 <!-- tel-details end -->
             </li>
         </ul>
-        <div class="tel-pop-box">
+        <div class="f-morelp" ng-if="isHasMore">
+            <a class="f-more-title" ng-click="loadMore()">加载更多...</a>
+        </div>
+        <!-- <div class="tel-pop-box">
             <form class="content" action="" method="">
                 <span class="close">X</span>
                 <p>2017.10.02 23:10 百度推广移动端 主动来电</p>
                 <input type="text" name="" value="百度推广移动端" />
                 <input class="submit" type="submit" name="" value="保 存" />
             </form>
-        </div>
+        </div> -->
         <!-- tel-pop-box end -->
     </div>
     <!-- tel-list end -->

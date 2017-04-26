@@ -49,6 +49,24 @@ app.filter('datefilter', function() {
         time.setHours(0);
         return time.toTimeString().split(' ')[0];
     }
+}).filter('callstatefilter', function() {
+    return function(input) {
+        var str = '';
+        switch (input) {
+            case 0:
+                str = '未接通';
+                break;
+            case 1:
+                str = '已接通';
+                break;
+            case 2:
+                str = '留电';
+                break;
+            default:
+                break;
+        }
+        return str;
+    }
 });
 
 app.value('$userid', {});

@@ -39,18 +39,15 @@
         <!-- chart-nav end -->
         <div class="chart-head">
             <div class="chart-left-select" ng-click="onChartSelectClick($event)">
-                <span class="down">最近7天</span>
+                <span class="down">{{chartScopes[scopeType].name}}</span>
                 <ul>
-                    <li><a href="#">最近4天</a></li>
-                    <li><a href="#">最近1天</a></li>
-                    <li><a href="#">最近2天</a></li>
-                    <li><a href="#">最近3天</a></li>
+                    <li ng-repeat="scope in chartScopes" ng-click="onChangeScope($index)"><a>{{scope.name}}</a></li>
                 </ul>
             </div>
             <div class="chart-right-select">
-                <a ng-click="onChangeSource(0)" ng-class="{'on':chartSource === 0}">全部</a>
-                <a ng-click="onChangeSource(1)" ng-class="{'on':chartSource === 1}">PC</a>
-                <a ng-click="onChangeSource(2)" ng-class="{'on':chartSource === 2}">WAP</a>
+                <a ng-click="onChangeSource('')" ng-class="{'on':chartSource === ''}">全部</a>
+                <a ng-click="onChangeSource(0)" ng-class="{'on':chartSource === 0}">PC</a>
+                <a ng-click="onChangeSource(1)" ng-class="{'on':chartSource === 1}">WAP</a>
             </div>
         </div>
         <!-- chart-head end -->

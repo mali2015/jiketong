@@ -19,7 +19,7 @@
                     <span class="txt-hide tel">{{item.phone}}</span>
                     <span class="txt-hide city">{{item.city}}</span>
                     <span class="txt-hide">{{item.call_time | datefilter}}</span>
-                    <span class="txt-hide">{{item.status === 1 ? '已接通' : '未接通'}}</span>
+                    <span class="txt-hide">{{item.status | callstatefilter}}</span>
                     <a href="tel:{{item.phone}}"></a>
                 </p>
                 <!-- <div class="tel-details clearfix">

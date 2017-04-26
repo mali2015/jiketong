@@ -15,7 +15,18 @@ module.exports = {
                     }
                 }
             })($scope.planid);
-            $scope.chartSource = 0;
+            $scope.chartSource = '';
+            $scope.chartScopes = [{
+                name: '全部',
+                value: 90
+            }, {
+                name: '最近30天',
+                value: 30
+            }, {
+                name: '最近7天',
+                value: 7
+            }];
+            $scope.scopeType = 0;
 
             $getData('plan_report_total', {
                 planid: $scope.planid
@@ -39,9 +50,9 @@ module.exports = {
             });
 
             $getData('plan_report_trend', {
-                delta: 100,
+                delta: $scope.chartScopes[$scope.scopeType].value,
                 plan_id: $scope.planid,
-                platform: $scope.chartSource === 0 ? '' : $scope.chartSource
+                platform: $scope.chartSource
             }).then(function(res) {
                 baseoption.xAxis.categories = [];
                 baseoption.series[0].data = [];
@@ -63,9 +74,9 @@ module.exports = {
             $scope.onChangeSource = function(source) {
                 $scope.chartSource = source;
                 $getData('plan_report_trend', {
-                    delta: 100,
+                    delta: $scope.chartScopes[$scope.scopeType].value,
                     plan_id: $scope.planid,
-                    platform: $scope.chartSource === 0 ? '' : $scope.chartSource
+                    platform: $scope.chartSource
                 }).then(function(res) {
                     baseoption.xAxis.categories = [];
                     baseoption.series[0].data = [];
@@ -85,6 +96,27 @@ module.exports = {
                 if (plan.plan_id !== $scope.planid) {
                     $state.go('board.statement', { id: plan.plan_id });
                 }
+            }
+
+            $scope.onChangeScope = function(scope) {
+                $scope.scopeType = scope;
+                $getData('plan_report_trend', {
+                    delta: $scope.chartScopes[$scope.scopeType].value,
+                    plan_id: $scope.planid,
+                    platform: $scope.chartSource
+                }).then(function(res) {
+                    baseoption.xAxis.categories = [];
+                    baseoption.series[0].data = [];
+                    baseoption.series[1].data = [];
+                    for (var i = 0; i < res.list.length; i++) {
+                        var item = res.list[i];
+                        baseoption.xAxis.categories.push(item.create_time);
+                        baseoption.series[0].data.push(item.total_click);
+                        baseoption.series[1].data.push(item.total_pv);
+                    }
+                    var chart;
+                    chart = new Highcharts.Chart(baseoption);
+                });
             }
 
             var statementList = false;

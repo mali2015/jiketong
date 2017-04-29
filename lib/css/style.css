@@ -263,16 +263,17 @@
 .statement-tel-list li {
     padding: 0 0.3rem;
     line-height: 0.88rem;
-    border-bottom: 1px solid #DEDEDE;
+    border-bottom: 1px solid #999;
     overflow: hidden;
 }
 
 .statement-tel-list li:first-child {
-    border-top: 1px solid #DEDEDE;
+    border-top: 1px solid #999;
 }
 
 .statement-tel-list li span {
     float: left;
+    margin-right: 0.2rem;
 }
 
 .statement-tel-list li span.tel {
@@ -393,7 +394,7 @@
 
 .tel-list-count {
     line-height: 0.88rem;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #999;
     background-color: #fff;
     padding: 0 0.3rem;
     font-size: 0.3rem;
@@ -408,7 +409,7 @@
 .tel-list li {
     min-height: 0.88rem;
     overflow: hidden;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #999;
 }
 
 .tel-list li p {

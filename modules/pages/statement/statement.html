@@ -73,11 +73,16 @@
         <div class="statement-tel-list">
             <ul>
                 <li ng-repeat="tel in tellist">
-                    <span class="txt-hide tel">{{tel.phone}}</span>
-                    <span class="txt-hide city">{{tel.city}}</span>
-                    <time class="txt-hide">{{tel.call_time}}</time>
-                    <a href="tel:{{tel.phone}}"></a>
+                    <p>
+                    <!-- <i class="down" ng-click="onExpandClick($event)"></i> -->
+                        <span class="txt-hide tel">{{tel.phone}}</span>
+                        <span class="txt-hide">{{tel.city}}</span>
+                        <span class="txt-hide">{{tel.call_time | datefilter}}</span>
+                        <span class="txt-hide">{{tel.status | callstatefilter}}</span>
+                        <a href="tel:{{tel.phone}}"></a>
+                    </p>
                 </li>
+
                 <li class="more">
                     <a ng-click="onViewCall()">查看全部来电 <i> &gt;</i></a>
                 </li>

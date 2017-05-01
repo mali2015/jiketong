@@ -1,24 +1,41 @@
 module.exports = {
-    url: '/verify',
+    url: '/verify/:phone',
     template: __inline('./verify.html'),
-    controller: ["$scope",
-        function($scope) {
+    controller: ["$scope", "$stateParams", "$getData",
+
+        function($scope, $stateParams, $getData) {
+            $scope.phone = $stateParams.phone;
+            countDown();
+
             var timer;
             var s = 20;
-            $(".anew").on("click", function() {
-                if (this.className.indexOf("on") != -1) {
-                    return false; }
-                var self = $(this);
-                self.addClass("on");
+
+            function sendVerify() {
+                $getData('getback_password', {
+                    phone: $scope.phone
+                }).then(function(res) {
+                    $scope.statistical = res.result;
+                });
+            }
+
+            function countDown() {
+                var btn = $('.anew');
+                if (btn[0].className.indexOf("on") != -1) {
+                    return false;
+                }
+                btn.addClass("on");
                 timer = setInterval(function() {
                     if (s == 0) {
                         clearInterval(timer);
-                        self.removeClass("on");
+                        btn.removeClass("on");
                         s = 20;
                     }
                     s--;
-                    self.find(".count-down").text("(" + s + "s)");
-                }, 1000)
+                    btn.find(".count-down").text("(" + s + "s)");
+                }, 1000);
+            }
+            $(".anew").on("click", function() {
+                countDown();
             });
         }
     ]

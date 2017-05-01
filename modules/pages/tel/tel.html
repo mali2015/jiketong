@@ -17,10 +17,10 @@
                 <p>
                     <!-- <i class="down" ng-click="onExpandClick($event)"></i> -->
                     <span class="txt-hide tel">{{item.phone}}</span>
-                    <span class="txt-hide city">{{item.city}}</span>
                     <span class="txt-hide">{{item.call_time | datefilter}}</span>
-                    <span class="txt-hide">{{item.status | callstatefilter}}</span>
+                    <span class="txt-hide">{{item.status | callstatefilter: item.user_name}}</span>
                     <a href="tel:{{item.phone}}"></a>
+                    <span class="txt-hide city">{{item.city}}</span>
                 </p>
                 <!-- <div class="tel-details clearfix">
                     <p>{{item.call_time | datefilter}}  百度推广移动端  主动来电</p>

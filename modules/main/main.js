@@ -50,7 +50,7 @@ app.filter('datefilter', function() {
         return time.toTimeString().split(' ')[0];
     }
 }).filter('callstatefilter', function() {
-    return function(input) {
+    return function(input, name) {
         var str = '';
         switch (input) {
             case 0:
@@ -60,7 +60,11 @@ app.filter('datefilter', function() {
                 str = '已接通';
                 break;
             case 2:
-                str = '留电';
+                var len = name.length;
+                if(len > 3){
+                    len = 3;
+                }
+                str = name.substring(0, len) + '留电';
                 break;
             default:
                 break;

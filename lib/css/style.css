@@ -561,6 +561,8 @@
 }
 
 .btn {
+    text-align: center;
+    line-height: 0.9rem;
     display: block;
     height: 0.9rem;
     width: 6.9rem;

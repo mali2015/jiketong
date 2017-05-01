@@ -77,7 +77,7 @@
                         <span class="txt-hide tel">{{tel.phone}}</span>
                         <span class="txt-hide">{{tel.city}}</span>
                         <span class="txt-hide">{{tel.call_time | datefilter}}</span>
-                        <span class="txt-hide">{{tel.status | callstatefilter}}</span>
+                        <span class="txt-hide">{{tel.status | callstatefilter: tel.user_name}}</span>
                         <a href="tel:{{tel.phone}}"></a>
                     </p>
                 </li>

@@ -6,7 +6,8 @@ module.exports = {
             $scope.onSubmitPhone = function() {
                 if ($scope.phone && checkPhone($scope.phone)) {
                     $getData('getback_password', {
-                        phone: $scope.phone
+                        phone: $scope.phone,
+                        login_name: $scope.name
                     }).then(function(res) {
                         if (res.status !== 0) {
                             alert("手机号码不存在！");

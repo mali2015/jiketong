@@ -1,6 +1,6 @@
 <div class="statement">
     <div class="blue-top">
-        <h2 class="statement-title" ng-click="onHeadClick($event)">{{info.plan_name}}<span class="down"></span></h2>
+        <h2 ng-if="datacontext.list.length > 0" class="statement-title" ng-click="onHeadClick($event)">{{info.plan_name}}<span class="down"></span></h2>
         <ul class="hide-list">
             <li ng-click="onChangePlan(item)" ng-repeat="item in datacontext.list">
                 <b class="txt-hide">{{item.plan_name}}</b>

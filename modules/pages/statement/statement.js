@@ -1,13 +1,11 @@
 module.exports = {
     url: '/statement/:id',
     template: __inline('./statement.html'),
-    controller: ["$scope", '$getData', '$checkLog',
-        'datacontext', '$stateParams', '$state',
-        function($scope, $getData, $checkLog,
-            datacontext, $stateParams, $state) {
+    controller: ["$scope", '$getData', '$checkLog', 'datacontext', '$stateParams', '$state',
+        function($scope, $getData, $checkLog, datacontext, $stateParams, $state) {
             $checkLog(datacontext);
             $scope.datacontext = datacontext;
-            $scope.planid = $stateParams.id || $scope.datacontext.list[0].plan_id;
+            $scope.planid = $stateParams.id || ($scope.datacontext.list[0] && $scope.datacontext.list[0].plan_id);
             $scope.info = (function(id) {
                 for (var i = 0; i < $scope.datacontext.list.length; i++) {
                     if ($scope.datacontext.list[i].plan_id === id) {
@@ -27,7 +25,6 @@ module.exports = {
                 value: 7
             }];
             $scope.scopeType = 0;
-
             $getData('plan_report_total', {
                 planid: $scope.planid
             }).then(function(res) {
@@ -39,7 +36,6 @@ module.exports = {
             }).then(function(res) {
                 $scope.statisticalyes = res.result;
             });
-
             $getData('call_list', {
                 page_size: 4,
                 page_num: 1,
@@ -48,7 +44,6 @@ module.exports = {
             }).then(function(res) {
                 $scope.tellist = res.list;
             });
-
             $getData('plan_report_trend', {
                 delta: $scope.chartScopes[$scope.scopeType].value,
                 plan_id: $scope.planid,
@@ -66,11 +61,11 @@ module.exports = {
                 var chart;
                 chart = new Highcharts.Chart(baseoption);
             });
-
             $scope.onViewCall = function() {
-                $state.go('board.tel', { id: $scope.planid });
+                $state.go('board.tel', {
+                    id: $scope.planid
+                });
             }
-
             $scope.onChangeSource = function(source) {
                 $scope.chartSource = source;
                 $getData('plan_report_trend', {
@@ -91,13 +86,13 @@ module.exports = {
                     chart = new Highcharts.Chart(baseoption);
                 });
             }
-
             $scope.onChangePlan = function(plan) {
                 if (plan.plan_id !== $scope.planid) {
-                    $state.go('board.statement', { id: plan.plan_id });
+                    $state.go('board.statement', {
+                        id: plan.plan_id
+                    });
                 }
             }
-
             $scope.onChangeScope = function(scope) {
                 $scope.scopeType = scope;
                 $getData('plan_report_trend', {
@@ -118,13 +113,11 @@ module.exports = {
                     chart = new Highcharts.Chart(baseoption);
                 });
             }
-
             var statementList = false;
             var chartList = false;
             $scope.onHeadClick = function(event) {
                 statementList = showList($(".statement .hide-list"), $(event.target), statementList);
             }
-
             $scope.onChartSelectClick = function(event) {
                 chartList = showList($(".chart-left-select ul"), $(event.target), chartList);
             }
@@ -139,7 +132,6 @@ module.exports = {
                     return false;
                 }
             }
-
             var baseoption = {
                 chart: {
                     renderTo: 'container',
@@ -165,8 +157,7 @@ module.exports = {
                 },
                 tooltip: {
                     formatter: function() {
-                        return this.series.name + ' <b>' +
-                            Highcharts.numberFormat(this.y, 0, null, '') + '</b><br/>日期 ' + this.x;
+                        return this.series.name + ' <b>' + Highcharts.numberFormat(this.y, 0, null, '') + '</b><br/>日期 ' + this.x;
                     }
                 },
                 plotOptions: {
